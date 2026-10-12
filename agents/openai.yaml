@@ -1,0 +1,5 @@
+interface:
+  display_name: "Jacky 讲解视频（纸蓝 Vox + 芽仔）"
+  short_description: "逐字稿 → 分镜确认 → 口播图解与芽仔演示串联，火山 TTS 或真人原声，Remotion 一次渲染出带字幕配乐的成片"
+  brand_color: "#0138C4"
+  default_prompt: "使用 $jacky-remotion，把这份逐字稿做成纸蓝讲解视频：先写分镜表给我确认，配音前报字数和费用，再写场景、看静帧验收，最后出成片。"

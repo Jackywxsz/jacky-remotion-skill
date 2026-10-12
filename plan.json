@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "title": "无声入门示例",
+  "format": "h",
+  "fps": 30,
+  "duration": 6,
+  "column": "讲解视频 / 无声示例",
+  "keywords": [
+    "想法",
+    "角色"
+  ],
+  "audio": {
+    "narration": null,
+    "words": "voice/words.json",
+    "captions": "voice/captions.json",
+    "music": null
+  },
+  "presenter": null,
+  "segments": [
+    {
+      "id": "s01",
+      "type": "broll",
+      "presenter": "hidden",
+      "start": 0,
+      "end": 6,
+      "tag": "从想法到画面",
+      "narration": "把想法讲清楚，让角色把关系演出来。",
+      "intent": "从一个画面开始改成自己的讲解视频",
+      "cues": [
+        {
+          "say": "角色",
+          "action": "角色指向图解"
+        }
+      ]
+    }
+  ]
+}
