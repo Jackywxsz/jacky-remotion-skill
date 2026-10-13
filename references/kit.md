@@ -43,7 +43,7 @@ export const S03=()=>{
 | `Stage` | 全画布 SVG 容器，道具和墨线都放里面 |
 | `InkLine pts at dur head dash` | 手绘描线，`head` 画箭头 |
 | `InkCircle cx cy rx ry at` | 手绘圈注（默认实蓝） |
-| `HandWrite text at size per` | 逐字擦出，标题正文默认用它 |
+| `HandWrite text at size per` | 逐字擦出，标题正文默认用它。输出一串 `<span>`，放进 flex 容器时外面包一层 `<div>` |
 | `HandDrop text at size` | 逐字落下，短促情绪词 |
 | `TornBlue text at size inline` | 撕纸蓝重点，一屏一处 |
 | `TagSticker text x y at` | 栏目小签（总装已按 plan.tag 自动放，场景里一般不用） |
@@ -59,7 +59,7 @@ export const S03=()=>{
 ## Yazai.tsx：芽仔
 
 `<Yazai x y h face faceSince headRot sprout flip rot shadow seed/>`：`x/y` 是靴底中点，`h` 是身高像素。表情：`idle blink happy surprise star love awkward doubt loading`。
-`useFace(cues, blinks)` 排表情；`useHop(from, period, air, amp)` 原地跳。芽仔不变形，靠位移、旋转、跳跃和面罩表演；需要“手里拿东西”时，手的位置约在 `(x+78*h/300, y-81*h/300)`。
+`useFace(cues, blinks)` 排表情；`useHop(from, period, air, amp)` 原地跳。芽仔不变形，也不要给 `Yazai.tsx` 加手臂、腿的旋转参数（描线没有按关节切开，转了会断臂）；靠位移、旋转、跳跃和面罩表演；需要“手里拿东西”时，手的位置约在 `(x+78*h/300, y-81*h/300)`。
 
 ## props.tsx：道具
 

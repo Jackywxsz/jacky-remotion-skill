@@ -99,13 +99,13 @@ export const TornBlue:React.FC<{text:string;at:number;size?:number;rot?:number;i
 export const HandWrite:React.FC<{text:string;at:number;size:number;per?:number;color?:string}>=({text,at,size,per=2,color=V.ink})=>{
  const frame=useCurrentFrame();
  return <>{[...text].map((ch,i)=>{const t=interpolate(frame,[at+i*per,at+i*per+4],[0,1],clamp);
-  return <span key={i} style={{display:'inline-block',fontSize:size,color,clipPath:`inset(-10% ${(1-t)*100}% -10% -10%)`,transform:`translateY(${(rand(i*3.1+text.length)-.5)*5}px) rotate(${(rand(i*7.7)-.5)*3}deg)`}}>{ch}</span>;})}</>;
+  return <span key={i} style={{display:'inline-block',fontSize:size,color,clipPath:`inset(-10% ${(1-t)*100}% -10% -10%)`,transform:`translateY(${(rand(i*3.1+text.length)-.5)*5}px) rotate(${(rand(i*7.7)-.5)*3}deg)`}}>{ch===' '?'\u00A0':ch}</span>;})}</>;
 };
 /** 逐字落下：比 HandWrite 更活泼，用在短促的情绪词上。 */
 export const HandDrop:React.FC<{text:string;at:number;size?:number;color?:string;per?:number}>=({text,at,size=76,color=V.ink,per=1.5})=>{
  const frame=useCurrentFrame();
  return <>{[...text].map((ch,i)=>{const t=interpolate(frame,[at+i*per,at+i*per+6],[0,1],clamp);
-  return <span key={i} style={{display:'inline-block',opacity:t,color,fontSize:size,transform:`translateY(${(1-t)*-18+(rand(i*3.1+text.length)-.5)*5}px) rotate(${(rand(i*7.7)-.5)*4}deg)`}}>{ch}</span>;})}</>;
+  return <span key={i} style={{display:'inline-block',opacity:t,color,fontSize:size,transform:`translateY(${(1-t)*-18+(rand(i*3.1+text.length)-.5)*5}px) rotate(${(rand(i*7.7)-.5)*4}deg)`}}>{ch===' '?'\u00A0':ch}</span>;})}</>;
 };
 
 /** 栏目贴纸：淡蓝小签，放在白窗左上，告诉观众“这段在讲什么”。 */
